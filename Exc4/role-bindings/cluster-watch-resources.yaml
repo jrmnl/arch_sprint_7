@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-watch-resources
+subjects:
+- kind: ServiceAccount
+  name: sasha
+  namespace: default
+  apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: resources-watcher
+  apiGroup: rbac.authorization.k8s.io

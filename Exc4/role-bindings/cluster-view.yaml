@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-view
+subjects:
+- kind: ServiceAccount
+  name: sasha
+  namespace: default
+  apiGroup: ""
+- kind: ServiceAccount
+  name: taisia
+  namespace: default
+  apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: view
+  apiGroup: rbac.authorization.k8s.io
